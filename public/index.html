@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src: 'self'"> -->
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <title>Stripe and CSP TEST</title>
+  </head>
+  <body>
+    <script type='text/javascript' src="https://js.stripe.com/v3/"></script>
+    <div id="root">STRIPE</div>
+    <div>
+      <span id='payBtn'>PAYME</span>
+      <script>
+        document.getElementById('payBtn').onclick = function(e) {
+          console.log('eyah');
+          const str = window.Stripe('asdfas');
+          console.log('Got stripe' , str);
+          const elements = str.elements();
+          console.log(elements);
+        }
+      </script>
+    </div>
+  </body>
+</html>
